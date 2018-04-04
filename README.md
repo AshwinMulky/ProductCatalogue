@@ -13,11 +13,11 @@ Ehcache : Hazelcast
 Build tool : Gradle
 Running port : 8081
 
-NOTE: If your are just trying to test the API calls without Jhipster registry then, comment line num 64 and uncomment line num 65 in the below java file.
+NOTE: If your are just trying to test the API calls without Jhipster registry then, comment line num 63 and uncomment line num 64 in the below java file.
 com.globomart.catalogue.config.MicroserviceSecurityConfiguration
 
-             //.antMatchers("/api/**").permitAll()
-            .antMatchers("/management/health").permitAll()
+             //.antMatchers("/api/**").authenticated() //Authentication appens through registry
+             .antMatchers("/api/**").permitAll()  // Authentication not required
 
 ## Development
 
