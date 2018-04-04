@@ -7,7 +7,14 @@ This application is configured for Service Discovery and Configuration with the 
 
 
 
-## This MicroService features
+## About MicroService
+Product Catalogue Service
+Microservice that provides the functionality to
+- Add a product
+- Retrieve the list of products based on simple search criteria e.g. product type
+- Remove a product from the catalogue.
+
+### Features
 - Service discovery server : Jhipster registry
 - Type of Authentication : JWT
 - Database : MongoDB
