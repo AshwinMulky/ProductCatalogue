@@ -5,6 +5,8 @@ This is a "microservice" application intended to be part of a microservice archi
 
 This application is configured for Service Discovery and Configuration with the JHipster-Registry. On launch, it will refuse to start if it is not able to connect to the JHipster-Registry at [http://localhost:8761](http://localhost:8761). For more information, read our documentation on [Service Discovery and Configuration with the JHipster-Registry][].
 
+
+
 ## This MicroService features
 - Service discovery server : Jhipster registry
 - Type of Authentication : JWT
@@ -18,6 +20,14 @@ com.globomart.catalogue.config.MicroserviceSecurityConfiguration
 
              //.antMatchers("/api/**").authenticated() //Authentication appens through registry
              .antMatchers("/api/**").permitAll()  // Authentication not required
+
+### REST APIs
+* GET /api/products
+* POST /api/products
+* DELETE /api/products/{product_id}
+* PUT /api/products
+* GET /api/products/{id}
+* GET /api/products/search (search based on product type)
 
 ## Development
 
