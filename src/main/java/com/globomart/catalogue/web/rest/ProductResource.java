@@ -99,6 +99,13 @@ public class ProductResource {
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 
+    /**
+     * GET  /products/search : search for products with some parameters.
+     *
+     * @param pageable the pagination information
+     * @param type ProductType (optional)
+     * @return the ResponseEntity with status 200 (OK) and the list of products in body
+     */
     @GetMapping("/products/search")
     @Timed
     public ResponseEntity<List<Product>> searchProducts(Pageable pageable, @RequestParam(required = false) ProductType type) {

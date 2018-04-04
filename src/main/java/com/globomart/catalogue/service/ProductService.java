@@ -64,6 +64,13 @@ public class ProductService {
             .map(productMapper::toDto);
     }
 
+    /**
+     * Search for products.
+     *
+     * @param pageable the pagination information
+     * @param type ProductType
+     * @return the list of entities
+     */
     public Page<Product> search(Pageable pageable, ProductType type) {
         Criteria criteria = new Criteria();
         if(type!=null)
