@@ -7,7 +7,7 @@ This application is configured for Service Discovery and Configuration with the 
 
 
 
-## About MicroService
+## About this MicroService
 Product Catalogue Service
 Microservice that provides the functionality to
 - Add a product
