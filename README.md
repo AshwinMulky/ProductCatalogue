@@ -5,11 +5,31 @@ This is a "microservice" application intended to be part of a microservice archi
 
 This application is configured for Service Discovery and Configuration with the JHipster-Registry. On launch, it will refuse to start if it is not able to connect to the JHipster-Registry at [http://localhost:8761](http://localhost:8761). For more information, read our documentation on [Service Discovery and Configuration with the JHipster-Registry][].
 
+## This MicroService features
+Service discovery server : Jhipster registry
+Type of Authentication : JWT
+Database : MongoDB
+Ehcache : Hazelcast
+Build tool : Gradle
+Running port : 8081
+
+NOTE: If your are just trying to test the API calls without Jhipster registry then, comment line num 64 and uncomment line num 65 in the below java file.
+com.globomart.catalogue.config.MicroserviceSecurityConfiguration
+
+             //.antMatchers("/api/**").permitAll()
+            .antMatchers("/management/health").permitAll()
+
 ## Development
 
 To start your application in the dev profile, simply run:
 
     ./gradlew
+
+
+This microservice assumes that there is a Jhipster registry running, hence it continuesly tries to register itself with registry. You may see some errors like below. It is okay. APIs will work fine.
+
+2018-04-04 22:21:06.760 ERROR 10798 --- [tbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PRODUCTCATALOGUE/productCatalogue:4bfd5a0305d8477eb19ba6785b05a1bb - was unable to send heartbeat!
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 
 
 For further instructions on how to develop with JHipster, have a look at [Using JHipster in development][].
